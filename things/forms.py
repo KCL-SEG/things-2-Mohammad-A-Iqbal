@@ -9,3 +9,7 @@ class ThingForm(forms.Form):
                                 widget=forms.Textarea())
     quantity = forms.IntegerField(validators=[MinValueValidator(0), MaxValueValidator(50)],
                                 widget=forms.NumberInput()) 
+
+    def clean(self):
+        super().clean()
+        
